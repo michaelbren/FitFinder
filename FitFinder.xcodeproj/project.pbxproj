@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E1A348A519EF55510018E48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348A419EF55510018E48F /* main.m */; };
+		E1A348A819EF55510018E48F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348A719EF55510018E48F /* AppDelegate.m */; };
+		E1A348AB19EF55510018E48F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348AA19EF55510018E48F /* ViewController.m */; };
+		E1A348AE19EF55510018E48F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A348AC19EF55510018E48F /* Main.storyboard */; };
+		E1A348B019EF55510018E48F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A348AF19EF55510018E48F /* Images.xcassets */; };
+		E1A348B319EF55510018E48F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A348B119EF55510018E48F /* LaunchScreen.xib */; };
+		E1A348BF19EF55510018E48F /* FitFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348BE19EF55510018E48F /* FitFinderTests.m */; };
+		E1A348C919EF56050018E48F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348C819EF56050018E48F /* Parse.framework */; };
+		E1A348CB19EF56190018E48F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348CA19EF56190018E48F /* AudioToolbox.framework */; };
+		E1A348CD19EF561F0018E48F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348CC19EF561F0018E48F /* CFNetwork.framework */; };
+		E1A348CF19EF56250018E48F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348CE19EF56250018E48F /* CoreGraphics.framework */; };
+		E1A348D119EF562D0018E48F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348D019EF562D0018E48F /* CoreLocation.framework */; };
+		E1A348D319EF56350018E48F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348D219EF56350018E48F /* libz.dylib */; };
+		E1A348D519EF563D0018E48F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348D419EF563D0018E48F /* MobileCoreServices.framework */; };
+		E1A348D719EF56450018E48F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348D619EF56450018E48F /* QuartzCore.framework */; };
+		E1A348D919EF564C0018E48F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348D819EF564C0018E48F /* Security.framework */; };
+		E1A348DB19EF56560018E48F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348DA19EF56560018E48F /* StoreKit.framework */; };
+		E1A348DD19EF565E0018E48F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348DC19EF565E0018E48F /* SystemConfiguration.framework */; };
+		E1A348E019EF58370018E48F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348DF19EF58370018E48F /* Bolts.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1A348B919EF55510018E48F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1A3489719EF55510018E48F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1A3489E19EF55510018E48F;
+			remoteInfo = FitFinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E1A3489F19EF55510018E48F /* FitFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1A348A319EF55510018E48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A348A419EF55510018E48F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1A348A619EF55510018E48F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E1A348A719EF55510018E48F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E1A348A919EF55510018E48F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E1A348AA19EF55510018E48F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E1A348AD19EF55510018E48F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1A348AF19EF55510018E48F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E1A348B219EF55510018E48F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E1A348B819EF55510018E48F /* FitFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1A348BD19EF55510018E48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A348BE19EF55510018E48F /* FitFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FitFinderTests.m; sourceTree = "<group>"; };
+		E1A348C819EF56050018E48F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E1A348CA19EF56190018E48F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E1A348CC19EF561F0018E48F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E1A348CE19EF56250018E48F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E1A348D019EF562D0018E48F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E1A348D219EF56350018E48F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E1A348D419EF563D0018E48F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E1A348D619EF56450018E48F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E1A348D819EF564C0018E48F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E1A348DA19EF56560018E48F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E1A348DC19EF565E0018E48F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E1A348DF19EF58370018E48F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1A3489C19EF55510018E48F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A348DD19EF565E0018E48F /* SystemConfiguration.framework in Frameworks */,
+				E1A348DB19EF56560018E48F /* StoreKit.framework in Frameworks */,
+				E1A348D919EF564C0018E48F /* Security.framework in Frameworks */,
+				E1A348E019EF58370018E48F /* Bolts.framework in Frameworks */,
+				E1A348D719EF56450018E48F /* QuartzCore.framework in Frameworks */,
+				E1A348D519EF563D0018E48F /* MobileCoreServices.framework in Frameworks */,
+				E1A348D319EF56350018E48F /* libz.dylib in Frameworks */,
+				E1A348D119EF562D0018E48F /* CoreLocation.framework in Frameworks */,
+				E1A348CF19EF56250018E48F /* CoreGraphics.framework in Frameworks */,
+				E1A348CD19EF561F0018E48F /* CFNetwork.framework in Frameworks */,
+				E1A348CB19EF56190018E48F /* AudioToolbox.framework in Frameworks */,
+				E1A348C919EF56050018E48F /* Parse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1A348B519EF55510018E48F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1A3489619EF55510018E48F = {
+			isa = PBXGroup;
+			children = (
+				E1A348A119EF55510018E48F /* FitFinder */,
+				E1A348BB19EF55510018E48F /* FitFinderTests */,
+				E1A348A019EF55510018E48F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1A348A019EF55510018E48F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1A3489F19EF55510018E48F /* FitFinder.app */,
+				E1A348B819EF55510018E48F /* FitFinderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1A348A119EF55510018E48F /* FitFinder */ = {
+			isa = PBXGroup;
+			children = (
+				E1A348A619EF55510018E48F /* AppDelegate.h */,
+				E1A348A719EF55510018E48F /* AppDelegate.m */,
+				E1A348A919EF55510018E48F /* ViewController.h */,
+				E1A348AA19EF55510018E48F /* ViewController.m */,
+				E1A348AC19EF55510018E48F /* Main.storyboard */,
+				E1A348AF19EF55510018E48F /* Images.xcassets */,
+				E1A348B119EF55510018E48F /* LaunchScreen.xib */,
+				E1A348DE19EF56860018E48F /* Frameworks */,
+				E1A348A219EF55510018E48F /* Supporting Files */,
+			);
+			path = FitFinder;
+			sourceTree = "<group>";
+		};
+		E1A348A219EF55510018E48F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1A348A319EF55510018E48F /* Info.plist */,
+				E1A348A419EF55510018E48F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1A348BB19EF55510018E48F /* FitFinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1A348BE19EF55510018E48F /* FitFinderTests.m */,
+				E1A348BC19EF55510018E48F /* Supporting Files */,
+			);
+			path = FitFinderTests;
+			sourceTree = "<group>";
+		};
+		E1A348BC19EF55510018E48F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1A348BD19EF55510018E48F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1A348DE19EF56860018E48F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1A348DF19EF58370018E48F /* Bolts.framework */,
+				E1A348C819EF56050018E48F /* Parse.framework */,
+				E1A348DC19EF565E0018E48F /* SystemConfiguration.framework */,
+				E1A348DA19EF56560018E48F /* StoreKit.framework */,
+				E1A348D819EF564C0018E48F /* Security.framework */,
+				E1A348D619EF56450018E48F /* QuartzCore.framework */,
+				E1A348D419EF563D0018E48F /* MobileCoreServices.framework */,
+				E1A348D219EF56350018E48F /* libz.dylib */,
+				E1A348D019EF562D0018E48F /* CoreLocation.framework */,
+				E1A348CE19EF56250018E48F /* CoreGraphics.framework */,
+				E1A348CC19EF561F0018E48F /* CFNetwork.framework */,
+				E1A348CA19EF56190018E48F /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1A3489E19EF55510018E48F /* FitFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1A348C219EF55510018E48F /* Build configuration list for PBXNativeTarget "FitFinder" */;
+			buildPhases = (
+				E1A3489B19EF55510018E48F /* Sources */,
+				E1A3489C19EF55510018E48F /* Frameworks */,
+				E1A3489D19EF55510018E48F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FitFinder;
+			productName = FitFinder;
+			productReference = E1A3489F19EF55510018E48F /* FitFinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1A348B719EF55510018E48F /* FitFinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1A348C519EF55510018E48F /* Build configuration list for PBXNativeTarget "FitFinderTests" */;
+			buildPhases = (
+				E1A348B419EF55510018E48F /* Sources */,
+				E1A348B519EF55510018E48F /* Frameworks */,
+				E1A348B619EF55510018E48F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1A348BA19EF55510018E48F /* PBXTargetDependency */,
+			);
+			name = FitFinderTests;
+			productName = FitFinderTests;
+			productReference = E1A348B819EF55510018E48F /* FitFinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1A3489719EF55510018E48F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = FitFinder;
+				TargetAttributes = {
+					E1A3489E19EF55510018E48F = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					E1A348B719EF55510018E48F = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = E1A3489E19EF55510018E48F;
+					};
+				};
+			};
+			buildConfigurationList = E1A3489A19EF55510018E48F /* Build configuration list for PBXProject "FitFinder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1A3489619EF55510018E48F;
+			productRefGroup = E1A348A019EF55510018E48F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1A3489E19EF55510018E48F /* FitFinder */,
+				E1A348B719EF55510018E48F /* FitFinderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1A3489D19EF55510018E48F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A348AE19EF55510018E48F /* Main.storyboard in Resources */,
+				E1A348B319EF55510018E48F /* LaunchScreen.xib in Resources */,
+				E1A348B019EF55510018E48F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1A348B619EF55510018E48F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1A3489B19EF55510018E48F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A348AB19EF55510018E48F /* ViewController.m in Sources */,
+				E1A348A819EF55510018E48F /* AppDelegate.m in Sources */,
+				E1A348A519EF55510018E48F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1A348B419EF55510018E48F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A348BF19EF55510018E48F /* FitFinderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1A348BA19EF55510018E48F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1A3489E19EF55510018E48F /* FitFinder */;
+			targetProxy = E1A348B919EF55510018E48F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E1A348AC19EF55510018E48F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1A348AD19EF55510018E48F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E1A348B119EF55510018E48F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1A348B219EF55510018E48F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1A348C019EF55510018E48F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E1A348C119EF55510018E48F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1A348C319EF55510018E48F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FitFinder",
+				);
+				INFOPLIST_FILE = FitFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E1A348C419EF55510018E48F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FitFinder",
+				);
+				INFOPLIST_FILE = FitFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E1A348C619EF55510018E48F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FitFinderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitFinder.app/FitFinder";
+			};
+			name = Debug;
+		};
+		E1A348C719EF55510018E48F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FitFinderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitFinder.app/FitFinder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1A3489A19EF55510018E48F /* Build configuration list for PBXProject "FitFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1A348C019EF55510018E48F /* Debug */,
+				E1A348C119EF55510018E48F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1A348C219EF55510018E48F /* Build configuration list for PBXNativeTarget "FitFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1A348C319EF55510018E48F /* Debug */,
+				E1A348C419EF55510018E48F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E1A348C519EF55510018E48F /* Build configuration list for PBXNativeTarget "FitFinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1A348C619EF55510018E48F /* Debug */,
+				E1A348C719EF55510018E48F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1A3489719EF55510018E48F /* Project object */;
+}
