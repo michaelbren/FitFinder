@@ -26,6 +26,7 @@
 		E1A348DB19EF56560018E48F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348DA19EF56560018E48F /* StoreKit.framework */; };
 		E1A348DD19EF565E0018E48F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348DC19EF565E0018E48F /* SystemConfiguration.framework */; };
 		E1A348E019EF58370018E48F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348DF19EF58370018E48F /* Bolts.framework */; };
+		E1A348E319EF60CD0018E48F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348E219EF60CD0018E48F /* UserModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		E1A348DA19EF56560018E48F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E1A348DC19EF565E0018E48F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E1A348DF19EF58370018E48F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		E1A348E119EF60CD0018E48F /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserModel.h; path = Models/UserModel.h; sourceTree = "<group>"; };
+		E1A348E219EF60CD0018E48F /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserModel.m; path = Models/UserModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				E1A348A719EF55510018E48F /* AppDelegate.m */,
 				E1A348A919EF55510018E48F /* ViewController.h */,
 				E1A348AA19EF55510018E48F /* ViewController.m */,
+				E1A348E119EF60CD0018E48F /* UserModel.h */,
+				E1A348E219EF60CD0018E48F /* UserModel.m */,
 				E1A348AC19EF55510018E48F /* Main.storyboard */,
 				E1A348AF19EF55510018E48F /* Images.xcassets */,
 				E1A348B119EF55510018E48F /* LaunchScreen.xib */,
@@ -277,6 +282,7 @@
 			files = (
 				E1A348AB19EF55510018E48F /* ViewController.m in Sources */,
 				E1A348A819EF55510018E48F /* AppDelegate.m in Sources */,
+				E1A348E319EF60CD0018E48F /* UserModel.m in Sources */,
 				E1A348A519EF55510018E48F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
