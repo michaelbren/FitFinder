@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D118619F19F5F2680059ED32 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D118619E19F5F2680059ED32 /* Default-568h@2x.png */; };
+		D11861A219F5F2A50059ED32 /* running31.png in Resources */ = {isa = PBXBuildFile; fileRef = D11861A019F5F2A50059ED32 /* running31.png */; };
+		D11861A319F5F2A50059ED32 /* weightlift.png in Resources */ = {isa = PBXBuildFile; fileRef = D11861A119F5F2A50059ED32 /* weightlift.png */; };
 		E1A348A519EF55510018E48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348A419EF55510018E48F /* main.m */; };
 		E1A348A819EF55510018E48F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348A719EF55510018E48F /* AppDelegate.m */; };
 		E1A348AB19EF55510018E48F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348AA19EF55510018E48F /* ViewController.m */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D118619E19F5F2680059ED32 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D11861A019F5F2A50059ED32 /* running31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = running31.png; path = ../../../../../Downloads/png/running31.png; sourceTree = "<group>"; };
+		D11861A119F5F2A50059ED32 /* weightlift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = weightlift.png; path = ../../../../../Downloads/png/weightlift.png; sourceTree = "<group>"; };
 		E1A3489F19EF55510018E48F /* FitFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A348A319EF55510018E48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1A348A419EF55510018E48F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		E1A3489619EF55510018E48F = {
 			isa = PBXGroup;
 			children = (
+				D118619E19F5F2680059ED32 /* Default-568h@2x.png */,
 				E1A348A119EF55510018E48F /* FitFinder */,
 				E1A348BB19EF55510018E48F /* FitFinderTests */,
 				E1A348A019EF55510018E48F /* Products */,
@@ -120,6 +127,8 @@
 		E1A348A119EF55510018E48F /* FitFinder */ = {
 			isa = PBXGroup;
 			children = (
+				D11861A019F5F2A50059ED32 /* running31.png */,
+				D11861A119F5F2A50059ED32 /* weightlift.png */,
 				E1A348A619EF55510018E48F /* AppDelegate.h */,
 				E1A348A719EF55510018E48F /* AppDelegate.m */,
 				E1A348A919EF55510018E48F /* ViewController.h */,
@@ -261,7 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A348AE19EF55510018E48F /* Main.storyboard in Resources */,
+				D118619F19F5F2680059ED32 /* Default-568h@2x.png in Resources */,
 				E1A348B319EF55510018E48F /* LaunchScreen.xib in Resources */,
+				D11861A219F5F2A50059ED32 /* running31.png in Resources */,
+				D11861A319F5F2A50059ED32 /* weightlift.png in Resources */,
 				E1A348B019EF55510018E48F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +458,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = FitFinderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitFinder.app/FitFinder";
@@ -461,6 +474,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = FitFinderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitFinder.app/FitFinder";
@@ -486,6 +500,7 @@
 				E1A348C419EF55510018E48F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1A348C519EF55510018E48F /* Build configuration list for PBXNativeTarget "FitFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +509,7 @@
 				E1A348C719EF55510018E48F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
