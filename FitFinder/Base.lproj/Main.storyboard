@@ -23,7 +23,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="way-yh-axG" kind="push" id="eg5-5W-aaw"/>
+                                    <segue destination="way-yh-axG" kind="push" id="pHL-vz-rVY"/>
                                 </connections>
                             </button>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayz-1I-dMC">
@@ -33,7 +33,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="way-yh-axG" kind="push" id="FdK-Ab-FIb"/>
+                                    <segue destination="way-yh-axG" kind="push" id="AbC-c3-JRZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,6 +41,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Choose your workout" id="p19-fx-OjO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="runningBtn" destination="Ayz-1I-dMC" id="8sK-wR-rIf"/>
+                        <outlet property="weightLiftBtn" destination="Bqp-fE-Ou6" id="xut-vO-MwA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,9 +88,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQl-Su-GDr">
-                                <rect key="frame" x="137" y="443" width="46" height="30"/>
+                                <rect key="frame" x="137" y="443" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -98,6 +102,7 @@
                     <connections>
                         <outlet property="gymTxtField" destination="wJY-77-5bz" id="ppm-aG-Yjj"/>
                         <outlet property="nameTxtField" destination="EMA-z5-HS2" id="xhz-qR-h9k"/>
+                        <outlet property="saveBtn" destination="ZQl-Su-GDr" id="33k-bd-FRZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uJ-7m-b1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -133,6 +138,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eg5-5W-aaw"/>
+        <segue reference="pHL-vz-rVY"/>
     </inferredMetricsTieBreakers>
 </document>

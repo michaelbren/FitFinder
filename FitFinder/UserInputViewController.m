@@ -7,7 +7,8 @@
 //
 
 #import "UserInputViewController.h"
-
+#import "ViewController.h"
+#import "UserModel.h"
 @interface UserInputViewController ()
 
 @end
@@ -30,6 +31,9 @@
     
     self.nameTxtField.delegate = self;
     self.gymTxtField.delegate = self;
+
+    
+    [self.saveBtn addTarget:self action:@selector(btnSaveClicked) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -45,6 +49,16 @@
         [textField resignFirstResponder];
     }
     return NO;
+}
+
+-(void)btnSaveClicked
+{
+    
+    NSString *name = [self.nameTxtField text];
+    NSString *gym = self.gymTxtField.text;
+    
+    UserModel *sharedManager = [UserModel sharedManager];
+    NSLog(sharedManager.workoutPreference);
 }
 
 - (void)didReceiveMemoryWarning

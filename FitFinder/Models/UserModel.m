@@ -11,5 +11,22 @@
 
 @implementation UserModel
 
+@synthesize workoutPreference;
+@synthesize fullName;
+@synthesize gym;
 
+
++ (id)sharedManager {
+    static UserModel *sharedMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMyManager = [[self alloc] init];
+    });
+    return sharedMyManager;
+}
+
+
+- (void)dealloc {
+    // Should never be called, but just here for clarity really.
+}
 @end

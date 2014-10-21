@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserInputViewController : UIViewController
+@interface UserInputViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTxtField;
 @property (weak, nonatomic) IBOutlet UITextField *gymTxtField;
+@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 
 @end

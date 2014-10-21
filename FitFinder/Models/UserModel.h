@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UserModel : NSObject
+@interface UserModel : NSObject{
+    NSString *workoutPreference;
+    NSString *fullName;
+    NSString *gym;
+}
+@property (nonatomic, retain) NSString *workoutPreference;
+@property (nonatomic, retain) NSString *fullName;
+@property (nonatomic, retain) NSString *gym;
 
-enum WorkoutType {
-    Weightlifting, Running
-};
-
-@property enum WorkoutType workoutPreference;
-@property NSString *fullName;
-@property NSString *gym;
++ (id)sharedManager;
 
 @end
+

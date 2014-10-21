@@ -19,25 +19,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.weightliftBtn addTarget:self action:@selector(wlbtnClicked) forControlEvents:UIControlEventTouchUpInside];
+  [self.weightLiftBtn addTarget:self action:@selector(wlbtnClicked) forControlEvents:UIControlEventTouchUpInside];
     
     [self.runningBtn addTarget:self action:@selector(rbtnClicked) forControlEvents:UIControlEventTouchUpInside];
     
-    UserModel *user = [[UserModel alloc]init];
+    NSLog(@"viewDidLoad");
 }
 
 -(void)wlbtnClicked
 {
     NSLog(@"weightlifting");
-    _user.workoutPreference = Weightlifting;
-    
+    UserModel *sharedManager = [UserModel sharedManager];
+    sharedManager.workoutPreference = @"Weightlifting";
 }
 
 -(void)rbtnClicked
 {
     NSLog(@"running");
-    _user.workoutPreference = Running;
-    
+    UserModel *sharedManager = [UserModel sharedManager];
+    sharedManager.workoutPreference = @"Running";
+
 }
 
 - (void)didReceiveMemoryWarning {
