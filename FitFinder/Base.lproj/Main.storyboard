@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="604" y="-29"/>
         </scene>
-        <!--View Controller - Input your information-->
+        <!--User Input View Controller - Input your information-->
         <scene sceneID="Gfl-Ao-grm">
             <objects>
-                <viewController id="way-yh-axG" sceneMemberID="viewController">
+                <viewController id="way-yh-axG" customClass="UserInputViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6yD-ta-cPQ"/>
                         <viewControllerLayoutGuide type="bottom" id="zVx-jX-N87"/>
@@ -83,11 +83,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQl-Su-GDr">
+                                <rect key="frame" x="137" y="443" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Input your information" id="yyg-mg-DhB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="gymTxtField" destination="wJY-77-5bz" id="ppm-aG-Yjj"/>
+                        <outlet property="nameTxtField" destination="EMA-z5-HS2" id="xhz-qR-h9k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uJ-7m-b1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

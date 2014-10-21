@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <Parse/Parse.h>
+#import "UserModel.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.weightliftBtn addTarget:self action:@selector(wlbtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.runningBtn addTarget:self action:@selector(rbtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    
+    UserModel *user = [[UserModel alloc]init];
+}
+
+-(void)wlbtnClicked
+{
+    NSLog(@"weightlifting");
+    _user.workoutPreference = Weightlifting;
+    
+}
+
+-(void)rbtnClicked
+{
+    NSLog(@"running");
+    _user.workoutPreference = Running;
     
 }
 

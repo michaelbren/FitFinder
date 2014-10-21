@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserModel.h"
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *weightliftBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *runningBtn;
+
+@property UserModel *user;
 
 @end
 

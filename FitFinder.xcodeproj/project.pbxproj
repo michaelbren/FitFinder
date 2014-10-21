@@ -10,6 +10,7 @@
 		D118619F19F5F2680059ED32 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D118619E19F5F2680059ED32 /* Default-568h@2x.png */; };
 		D11861A219F5F2A50059ED32 /* running31.png in Resources */ = {isa = PBXBuildFile; fileRef = D11861A019F5F2A50059ED32 /* running31.png */; };
 		D11861A319F5F2A50059ED32 /* weightlift.png in Resources */ = {isa = PBXBuildFile; fileRef = D11861A119F5F2A50059ED32 /* weightlift.png */; };
+		D11861A619F5F6600059ED32 /* UserInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11861A519F5F6600059ED32 /* UserInputViewController.m */; };
 		E1A348A519EF55510018E48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348A419EF55510018E48F /* main.m */; };
 		E1A348A819EF55510018E48F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348A719EF55510018E48F /* AppDelegate.m */; };
 		E1A348AB19EF55510018E48F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348AA19EF55510018E48F /* ViewController.m */; };
@@ -46,6 +47,8 @@
 		D118619E19F5F2680059ED32 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D11861A019F5F2A50059ED32 /* running31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = running31.png; path = ../../../../../Downloads/png/running31.png; sourceTree = "<group>"; };
 		D11861A119F5F2A50059ED32 /* weightlift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = weightlift.png; path = ../../../../../Downloads/png/weightlift.png; sourceTree = "<group>"; };
+		D11861A419F5F6600059ED32 /* UserInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInputViewController.h; sourceTree = "<group>"; };
+		D11861A519F5F6600059ED32 /* UserInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInputViewController.m; sourceTree = "<group>"; };
 		E1A3489F19EF55510018E48F /* FitFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A348A319EF55510018E48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1A348A419EF55510018E48F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				E1A348B119EF55510018E48F /* LaunchScreen.xib */,
 				E1A348DE19EF56860018E48F /* Frameworks */,
 				E1A348A219EF55510018E48F /* Supporting Files */,
+				D11861A419F5F6600059ED32 /* UserInputViewController.h */,
+				D11861A519F5F6600059ED32 /* UserInputViewController.m */,
 			);
 			path = FitFinder;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D11861A619F5F6600059ED32 /* UserInputViewController.m in Sources */,
 				E1A348AB19EF55510018E48F /* ViewController.m in Sources */,
 				E1A348A819EF55510018E48F /* AppDelegate.m in Sources */,
 				E1A348E319EF60CD0018E48F /* UserModel.m in Sources */,
