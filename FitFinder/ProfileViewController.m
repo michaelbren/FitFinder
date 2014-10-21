@@ -1,19 +1,18 @@
 //
-//  UserInputViewController.m
+//  ProfileViewController.m
 //  FitFinder
 //
 //  Created by Carl Bai on 10/20/14.
 //  Copyright (c) 2014 FitFinder. All rights reserved.
 //
 
-#import "UserInputViewController.h"
-#import "ViewController.h"
+#import "ProfileViewController.h"
 #import "UserModel.h"
-@interface UserInputViewController ()
+@interface ProfileViewController ()
 
 @end
 
-@implementation UserInputViewController
+@implementation ProfileViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,38 +28,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.nameTxtField.delegate = self;
-    self.gymTxtField.delegate = self;
-
-    
-    [self.saveBtn addTarget:self action:@selector(btnSaveClicked) forControlEvents:UIControlEventTouchUpInside];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self.nameTxtField resignFirstResponder];
-    [self.gymTxtField resignFirstResponder];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if(textField)
-    {
-        [textField resignFirstResponder];
-    }
-    return NO;
-}
-
--(void)btnSaveClicked
-{
-    
-    NSString *name = [self.nameTxtField text];
-    NSString *gym = self.gymTxtField.text;
-    
     UserModel *sharedManager = [UserModel sharedManager];
-    sharedManager.fullName = name;
-    sharedManager.gym = gym;
-    NSLog(sharedManager.workoutPreference);
+    [self.nameLbl setText:sharedManager.fullName];
+    [self.gymLbl setText:sharedManager.gym];
+    [self.workoutLbl setText:sharedManager.workoutPreference];
 }
 
 - (void)didReceiveMemoryWarning

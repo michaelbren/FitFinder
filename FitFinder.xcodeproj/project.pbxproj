@@ -11,6 +11,8 @@
 		D11861A219F5F2A50059ED32 /* running31.png in Resources */ = {isa = PBXBuildFile; fileRef = D11861A019F5F2A50059ED32 /* running31.png */; };
 		D11861A319F5F2A50059ED32 /* weightlift.png in Resources */ = {isa = PBXBuildFile; fileRef = D11861A119F5F2A50059ED32 /* weightlift.png */; };
 		D11861A619F5F6600059ED32 /* UserInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11861A519F5F6600059ED32 /* UserInputViewController.m */; };
+		D11861A819F608ED0059ED32 /* male80.png in Resources */ = {isa = PBXBuildFile; fileRef = D11861A719F608ED0059ED32 /* male80.png */; };
+		D11861AB19F609530059ED32 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11861AA19F609530059ED32 /* ProfileViewController.m */; };
 		E1A348A519EF55510018E48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348A419EF55510018E48F /* main.m */; };
 		E1A348A819EF55510018E48F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348A719EF55510018E48F /* AppDelegate.m */; };
 		E1A348AB19EF55510018E48F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348AA19EF55510018E48F /* ViewController.m */; };
@@ -49,6 +51,9 @@
 		D11861A119F5F2A50059ED32 /* weightlift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = weightlift.png; path = ../../../../../Downloads/png/weightlift.png; sourceTree = "<group>"; };
 		D11861A419F5F6600059ED32 /* UserInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInputViewController.h; sourceTree = "<group>"; };
 		D11861A519F5F6600059ED32 /* UserInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInputViewController.m; sourceTree = "<group>"; };
+		D11861A719F608ED0059ED32 /* male80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = male80.png; path = ../../../../../Downloads/male80.png; sourceTree = "<group>"; };
+		D11861A919F609530059ED32 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		D11861AA19F609530059ED32 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		E1A3489F19EF55510018E48F /* FitFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A348A319EF55510018E48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1A348A419EF55510018E48F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 		E1A348A119EF55510018E48F /* FitFinder */ = {
 			isa = PBXGroup;
 			children = (
+				D11861A719F608ED0059ED32 /* male80.png */,
 				D11861A019F5F2A50059ED32 /* running31.png */,
 				D11861A119F5F2A50059ED32 /* weightlift.png */,
 				E1A348A619EF55510018E48F /* AppDelegate.h */,
@@ -145,6 +151,8 @@
 				E1A348A219EF55510018E48F /* Supporting Files */,
 				D11861A419F5F6600059ED32 /* UserInputViewController.h */,
 				D11861A519F5F6600059ED32 /* UserInputViewController.m */,
+				D11861A919F609530059ED32 /* ProfileViewController.h */,
+				D11861AA19F609530059ED32 /* ProfileViewController.m */,
 			);
 			path = FitFinder;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 				D11861A219F5F2A50059ED32 /* running31.png in Resources */,
 				D11861A319F5F2A50059ED32 /* weightlift.png in Resources */,
 				E1A348B019EF55510018E48F /* Images.xcassets in Resources */,
+				D11861A819F608ED0059ED32 /* male80.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +310,7 @@
 				E1A348AB19EF55510018E48F /* ViewController.m in Sources */,
 				E1A348A819EF55510018E48F /* AppDelegate.m in Sources */,
 				E1A348E319EF60CD0018E48F /* UserModel.m in Sources */,
+				D11861AB19F609530059ED32 /* ProfileViewController.m in Sources */,
 				E1A348A519EF55510018E48F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
