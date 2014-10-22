@@ -11,6 +11,7 @@
 		E107BA3A19F69270003C773D /* icon_44534.png in Resources */ = {isa = PBXBuildFile; fileRef = E107BA3919F69270003C773D /* icon_44534.png */; };
 		E107BA3C19F6927A003C773D /* icon_14880.png in Resources */ = {isa = PBXBuildFile; fileRef = E107BA3B19F6927A003C773D /* icon_14880.png */; };
 		E107BA3E19F6A884003C773D /* icon_419.png in Resources */ = {isa = PBXBuildFile; fileRef = E107BA3D19F6A884003C773D /* icon_419.png */; };
+		E107BA4419F763F3003C773D /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E107BA4319F763F3003C773D /* MatchViewController.m */; };
 		E1A348A519EF55510018E48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348A419EF55510018E48F /* main.m */; };
 		E1A348A819EF55510018E48F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348A719EF55510018E48F /* AppDelegate.m */; };
 		E1A348AB19EF55510018E48F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348AA19EF55510018E48F /* MainViewController.m */; };
@@ -49,6 +50,8 @@
 		E107BA3919F69270003C773D /* icon_44534.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_44534.png; sourceTree = "<group>"; };
 		E107BA3B19F6927A003C773D /* icon_14880.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_14880.png; sourceTree = "<group>"; };
 		E107BA3D19F6A884003C773D /* icon_419.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_419.png; sourceTree = "<group>"; };
+		E107BA4219F763F3003C773D /* MatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
+		E107BA4319F763F3003C773D /* MatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchViewController.m; sourceTree = "<group>"; };
 		E1A3489F19EF55510018E48F /* FitFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A348A319EF55510018E48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1A348A419EF55510018E48F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 			children = (
 				E1A348A919EF55510018E48F /* MainViewController.h */,
 				E1A348AA19EF55510018E48F /* MainViewController.m */,
+				E107BA4219F763F3003C773D /* MatchViewController.h */,
+				E107BA4319F763F3003C773D /* MatchViewController.m */,
 				E107BA3619F68705003C773D /* SignInUpViewController.h */,
 				E107BA3719F68705003C773D /* SignInUpViewController.m */,
 			);
@@ -316,6 +321,7 @@
 			files = (
 				E1A348AB19EF55510018E48F /* MainViewController.m in Sources */,
 				E1A348A819EF55510018E48F /* AppDelegate.m in Sources */,
+				E107BA4419F763F3003C773D /* MatchViewController.m in Sources */,
 				E107BA3819F68705003C773D /* SignInUpViewController.m in Sources */,
 				E1A348E319EF60CD0018E48F /* User.m in Sources */,
 				E1A348A519EF55510018E48F /* main.m in Sources */,

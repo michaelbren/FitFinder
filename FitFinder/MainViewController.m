@@ -10,12 +10,14 @@
 #import <Parse/Parse.h>
 #import "User.h"
 #import "SignInUpViewController.h"
+#import "MatchViewController.h"
 
 @interface MainViewController ()
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property UIViewController *signInUpViewController;
 @property User *user;
+@property UIButton *profileImage;
 @end
 
 @implementation MainViewController
@@ -45,15 +47,15 @@
         // do stuff with the user
         CGPoint center = self.mainView.center;
         
-        UIButton *profileImage = [UIButton buttonWithType:UIButtonTypeCustom];
-        profileImage.frame = CGRectMake(0, 0, self.mainView.frame.size.width, self.mainView.frame.size.height/2);
+        self.profileImage = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.profileImage.frame = CGRectMake(0, 0, self.mainView.frame.size.width, self.mainView.frame.size.height/2);
         if (self.user.avatar) {
-            [profileImage setImage:self.user.avatar forState:UIControlStateNormal];
+            [self.profileImage setImage:self.user.avatar forState:UIControlStateNormal];
         } else {
-            [profileImage setImage:[UIImage imageNamed:@"icon_419.png"] forState:UIControlStateNormal];
+            [self.profileImage setImage:[UIImage imageNamed:@"icon_419.png"] forState:UIControlStateNormal];
         }
-        [profileImage addTarget:self action:@selector(tappedImagePicker) forControlEvents:UIControlEventTouchUpInside];
-        [self.mainView addSubview:profileImage];
+        [self.profileImage addTarget:self action:@selector(tappedImagePicker) forControlEvents:UIControlEventTouchUpInside];
+        [self.mainView addSubview:self.profileImage];
 
         UILabel *fullName = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
         fullName.textAlignment = NSTextAlignmentCenter;
@@ -103,6 +105,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info {
     self.user.avatar = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self.profileImage setImage:self.user.avatar forState:UIControlStateNormal];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -111,13 +114,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
 }
 
 - (void)tappedMatchButton {
-    
-    PFQuery *query = [PFUser query];
-    [query whereKey:@"workoutPreference" equalTo:self.user.workoutPreference]; // get all users with same workout pref as current
-    NSArray *potentials = [query findObjects];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: ((PFUser *)potentials.firstObject)[@"avatar"]];
-    [self.mainView addSubview:imageView];
+    MatchViewController *matchViewController = [[MatchViewController alloc] initWithUser:self.user];
+    [self presentViewController:matchViewController animated:NO completion:nil];
 }
 
 @end
