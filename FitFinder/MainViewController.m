@@ -18,6 +18,11 @@
 @property UIViewController *signInUpViewController;
 @property User *user;
 @property UIButton *profileImage;
+
+@property UILabel *fullName;
+@property UILabel *email;
+@property UILabel *workout;
+
 @end
 
 @implementation MainViewController
@@ -56,24 +61,27 @@
         }
         [self.profileImage addTarget:self action:@selector(tappedImagePicker) forControlEvents:UIControlEventTouchUpInside];
         [self.mainView addSubview:self.profileImage];
-
-        UILabel *fullName = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
-        fullName.textAlignment = NSTextAlignmentCenter;
-        fullName.center = CGPointMake(center.x, center.y + 75);
-        fullName.text = self.user.fullName;
-        [self.mainView addSubview:fullName];
         
-        UILabel *email = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
-        email.textAlignment = NSTextAlignmentCenter;
-        email.center = CGPointMake(center.x, center.y + 125);
-        email.text = self.user.parseUser.email;
-        [self.mainView addSubview:email];
+        //UILabel *fullName = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+        _fullName = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+        _fullName.textAlignment = NSTextAlignmentCenter;
+        _fullName.center = CGPointMake(center.x, center.y + 75);
+        _fullName.text = self.user.fullName;
+        [self.mainView addSubview:_fullName];
         
-        UILabel *workout = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
-        workout.textAlignment = NSTextAlignmentCenter;
-        workout.center = CGPointMake(center.x, center.y + 175);
-        workout.text = self.user.workoutPreference;
-        [self.mainView addSubview:workout];
+        //UILabel *email = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+        _email = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+        _email.textAlignment = NSTextAlignmentCenter;
+        _email.center = CGPointMake(center.x, center.y + 125);
+        _email.text = self.user.parseUser.email;
+        [self.mainView addSubview:_email];
+        
+        //UILabel *workout = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+        _workout = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+        _workout.textAlignment = NSTextAlignmentCenter;
+        _workout.center = CGPointMake(center.x, center.y + 175);
+        _workout.text = self.user.workoutPreference;
+        [self.mainView addSubview:_workout];
         
         UIButton *logoutButton = [UIButton buttonWithType:UIButtonTypeSystem];
         logoutButton.frame = CGRectMake(center.x - 125, center.y + 200, 100, 40);
@@ -90,6 +98,11 @@
 }
 
 - (void)logOutButton {
+    // Hides the label so when you login again it doesn't show up
+    self.fullName.hidden = YES;
+    self.email.hidden = YES;
+    self.workout.hidden = YES;
+    
     [PFUser logOut];
     self.signInUpViewController = [[SignInUpViewController alloc] init];
     [self presentViewController:self.signInUpViewController animated:NO completion:nil];
