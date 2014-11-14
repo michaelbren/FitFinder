@@ -12,7 +12,9 @@
 @implementation User
 
 @synthesize fullName = _fullName;
+@synthesize phoneNumber = _phoneNumber;
 @synthesize gym = _gym;
+@synthesize matchData = _matchData;
 @synthesize workoutPreference = _workoutPreference;
 @synthesize workoutType = _workoutType;
 @synthesize avatar = _avatar;
@@ -89,6 +91,27 @@
 
 -(Workout)workoutType {
     return _workoutType;
+}
+
+-(void)setPhoneNumber:(NSString *)phoneNumber {
+    _phoneNumber = phoneNumber;
+    NSLog(@"%@", phoneNumber);
+    self.parseUser[@"phoneNumber"] = phoneNumber;
+}
+
+-(NSString *)phoneNumber {
+    return _phoneNumber;
+}
+
+-(void)setMatchData:(PFObject *)matchData {
+    _matchData = matchData;
+    NSLog(@"%@", matchData);
+    self.parseUser[@"matchData"] = matchData;
+    [self.parseUser save];
+}
+
+-(PFObject *)matchData {
+    return _matchData;
 }
 
 -(void)setAvatar:(UIImage *)avatar {

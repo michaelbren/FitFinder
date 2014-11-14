@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "User.h"
 
 @interface MatchViewController : UIViewController
-- (instancetype) initWithUser:(User *)user;
+- (instancetype) initWithCurrentUser:(User *)user;
 @end
