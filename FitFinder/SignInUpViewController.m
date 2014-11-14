@@ -11,6 +11,7 @@
 @interface SignInUpViewController ()
 
 @property UITextField *emailField;
+@property UITextField *phoneNumberField;
 @property UITextField *passwordField;
 @property UIButton *loginButton;
 @property UIButton *signupButton;
@@ -29,6 +30,7 @@
         self.view.backgroundColor = [UIColor whiteColor];
         
         self.emailField.delegate = self;
+        self.phoneNumberField.delegate = self;
         self.passwordField.delegate = self;
         self.fullName.delegate = self;
     }
@@ -44,6 +46,11 @@
     self.emailField.placeholder = @"Email";
     self.emailField.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:self.emailField];
+    
+    self.phoneNumberField = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 80, 300, 40)];
+    self.phoneNumberField.placeholder = @"Phone Number";
+    self.phoneNumberField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.phoneNumberField];
     
     self.passwordField = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y, 300, 40)];
     self.passwordField.placeholder = @"Password";
@@ -73,6 +80,7 @@
         self.loginButton.hidden = YES;
         self.signupButton.hidden = YES;
         self.emailField.hidden = YES;
+        self.phoneNumberField.hidden = YES;
         self.passwordField.hidden = YES;
         
         
@@ -89,8 +97,10 @@
                                             } else {
                                                 // The login failed. Check error to see why.
                                                 self.emailField.text = @"";
+                                                self.phoneNumberField.text = @"";
                                                 self.passwordField.text = @"";
                                                 self.emailField.placeholder = @"Email. Please try again!";
+                                                self.phoneNumberField.placeholder = @"Phone Number. Please try again!";
                                                 self.passwordField.placeholder = @"Password. Please try again!";
                                             }
                                         }];
@@ -99,6 +109,7 @@
         User *newUser = [[User alloc] initWithEmail:self.emailField.text andWithPassWord:self.passwordField.text];
         newUser.workoutType = self.workoutType;
         newUser.fullName = self.fullName.text;
+        newUser.phoneNumber = self.phoneNumberField.text;
         
         [newUser.parseUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
@@ -112,6 +123,7 @@
                 // Show the errorString somewhere and let the user try again.
                 NSLog(@"Failure: %@", errorString);
                 self.emailField.placeholder = @"Email. Please try again!";
+                self.phoneNumberField.placeholder = @"Phone Number. Please try again!";
                 self.passwordField.placeholder = @"Password. Please try again!";
                 self.fullName.placeholder = @"Full Name. Please try again!";
                 
@@ -130,6 +142,7 @@
     self.weightLiftingButton.hidden = YES;
     self.runningButton.hidden = YES;
     self.emailField.hidden = NO;
+    self.phoneNumberField.hidden = NO;
     self.passwordField.hidden = NO;
     
     CGPoint center = self.view.center;
@@ -144,14 +157,19 @@
     self.emailField.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:self.emailField];
     
+    self.phoneNumberField.placeholder = @"Phone Number";
+    self.phoneNumberField.frame = CGRectMake(center.x - 150, center.y, 300, 40);
+    self.phoneNumberField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.phoneNumberField];
+    
     self.passwordField.placeholder = @"Password";
-    self.passwordField.frame = CGRectMake(center.x - 150, center.y, 300, 40);
+    self.passwordField.frame = CGRectMake(center.x - 150, center.y + 80, 300, 40);
     self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
     self.passwordField.secureTextEntry = YES;
     [self.view addSubview:self.passwordField];
     
     self.actualSignUpButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    self.actualSignUpButton.frame = CGRectMake(center.x - 100, center.y + 80, 200, 40);
+    self.actualSignUpButton.frame = CGRectMake(center.x - 100, center.y + 160, 200, 40);
     [self.actualSignUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
     [self.actualSignUpButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.actualSignUpButton];
@@ -179,7 +197,7 @@
     {
         [textField resignFirstResponder];
     }
-    return NO;
+    return YES;
 }
 
 @end

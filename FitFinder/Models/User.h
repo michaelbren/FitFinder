@@ -20,9 +20,11 @@ typedef enum WorkoutType : NSInteger{
 
 @property PFUser *parseUser;
 @property NSString *fullName;
+@property NSString *phoneNumber;
 @property NSString *gym;
 @property UIImage *avatar;
 
+@property PFObject *matchData;
 
 @property Workout workoutType;
 @property NSString *workoutPreference;

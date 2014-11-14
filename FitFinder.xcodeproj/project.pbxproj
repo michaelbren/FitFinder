@@ -32,6 +32,7 @@
 		E1A348DD19EF565E0018E48F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348DC19EF565E0018E48F /* SystemConfiguration.framework */; };
 		E1A348E019EF58370018E48F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A348DF19EF58370018E48F /* Bolts.framework */; };
 		E1A348E319EF60CD0018E48F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A348E219EF60CD0018E48F /* User.m */; };
+		E1DB87191A15C00100E4DA81 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DB87181A15C00100E4DA81 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		E1A348DF19EF58370018E48F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E1A348E119EF60CD0018E48F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
 		E1A348E219EF60CD0018E48F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
+		E1DB87181A15C00100E4DA81 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DB87191A15C00100E4DA81 /* MessageUI.framework in Frameworks */,
 				E1A348DD19EF565E0018E48F /* SystemConfiguration.framework in Frameworks */,
 				E1A348DB19EF56560018E48F /* StoreKit.framework in Frameworks */,
 				E1A348D919EF564C0018E48F /* Security.framework in Frameworks */,
@@ -177,6 +180,7 @@
 		E1A348DE19EF56860018E48F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1DB87181A15C00100E4DA81 /* MessageUI.framework */,
 				E1A348DF19EF58370018E48F /* Bolts.framework */,
 				E1A348C819EF56050018E48F /* Parse.framework */,
 				E1A348DC19EF565E0018E48F /* SystemConfiguration.framework */,
