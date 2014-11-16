@@ -49,6 +49,7 @@
     
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
     _collectionView=[[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
     [_collectionView setDataSource:self];
@@ -56,9 +57,8 @@
     
     [_collectionView registerClass:[PhotoCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     [self.view addSubview:_collectionView];
-    
+    _collectionView.backgroundColor = [UIColor whiteColor];
     [self loadPictures];
-    
     [super viewDidLoad];
 
 }
@@ -94,10 +94,8 @@
     UIImage* image = [UIImage imageWithContentsOfFile:filename];
     //UIImageView* photoImageView = [[UIImageView alloc] initWithImage:image];
     
-    NSLog(@"1");
     cell.imageView.image = image;
-    
-    NSLog(@"2");
+
     // Add picture to cell as subview
     //[cell addSubview:photoImageView];
     return cell;
@@ -106,7 +104,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(self.view.frame.size.width, 250);
+    return CGSizeMake(self.view.frame.size.width - 100, 250);
 }
 
 
