@@ -14,6 +14,8 @@
 @property UITextField *emailField;
 @property UITextField *phoneNumberField;
 @property UITextField *passwordField;
+@property UITextField *fullName;
+
 @property UIButton *loginButton;
 @property UIButton *signupButton;
 @property UIButton *actualSignUpButton;
@@ -21,7 +23,7 @@
 @property UIButton *weightLiftingButton;
 @property UIButton *runningButton;
 @property Workout workoutType;
-@property UITextField *fullName;
+
 
 
 //picture stuff
@@ -51,6 +53,12 @@
     
     
     CGPoint center = self.view.center;
+    
+    self.fullName = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 160, 300, 40)];
+    self.fullName.placeholder = @"Full Name";
+    self.fullName.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.fullName];
+    self.fullName.hidden = YES;
     
     self.emailField = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 80, 300, 40)];
     self.emailField.placeholder = @"Email";
@@ -202,11 +210,13 @@
     _collectionView.hidden = YES;
     self.loginButton.hidden = YES;
     self.signupButton.hidden = YES;
+    self.fullName.hidden = NO;
     
+    /*
     self.fullName = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 160, 300, 40)];
     self.fullName.placeholder = @"Full Name";
     self.fullName.borderStyle = UITextBorderStyleRoundedRect;
-    [self.view addSubview:self.fullName];
+    [self.view addSubview:self.fullName];*/
     
     self.emailField.placeholder = @"Email";
     self.emailField.frame = CGRectMake(center.x - 150, center.y - 80, 300, 40);
