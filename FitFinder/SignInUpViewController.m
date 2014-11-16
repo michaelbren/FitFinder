@@ -129,6 +129,31 @@
                                     }];
     
     }
+    else {
+        User *newUser = [[User alloc] initWithEmail:self.emailField.text andWithPassWord:self.passwordField.text];
+        newUser.workoutType = self.workoutType;
+        newUser.fullName = self.fullName.text;
+        newUser.phoneNumber = self.phoneNumberField.text;
+        
+        [newUser.parseUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                // Hooray! Let them use the app now.
+                NSLog(@"Success!");
+                [self dismissViewControllerAnimated:NO completion:nil];
+                
+            } else {
+                NSString *errorString = [error userInfo][@"error"];
+                
+                // Show the errorString somewhere and let the user try again.
+                NSLog(@"Failure: %@", errorString);
+                self.emailField.placeholder = @"Email. Please try again!";
+                self.phoneNumberField.placeholder = @"Phone Number. Please try again!";
+                self.passwordField.placeholder = @"Password. Please try again!";
+                self.fullName.placeholder = @"Full Name. Please try again!";
+                
+            }
+        }];
+    }
 }
 
 
@@ -170,8 +195,40 @@
         NSLog(@"2");
         self.workoutType = Weightlifting;
     }
-
+    CGPoint center = self.view.center;
     
+    
+    
+    _collectionView.hidden = YES;
+    self.loginButton.hidden = YES;
+    self.signupButton.hidden = YES;
+    
+    self.fullName = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 160, 300, 40)];
+    self.fullName.placeholder = @"Full Name";
+    self.fullName.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.fullName];
+    
+    self.emailField.placeholder = @"Email";
+    self.emailField.frame = CGRectMake(center.x - 150, center.y - 80, 300, 40);
+    self.emailField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.emailField];
+    
+    self.phoneNumberField.placeholder = @"Phone Number";
+    self.phoneNumberField.frame = CGRectMake(center.x - 150, center.y, 300, 40);
+    self.phoneNumberField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.phoneNumberField];
+    
+    self.passwordField.placeholder = @"Password";
+    self.passwordField.frame = CGRectMake(center.x - 150, center.y + 80, 300, 40);
+    self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
+    self.passwordField.secureTextEntry = YES;
+    [self.view addSubview:self.passwordField];
+    
+    self.actualSignUpButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.actualSignUpButton.frame = CGRectMake(center.x - 100, center.y + 160, 200, 40);
+    [self.actualSignUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
+    [self.actualSignUpButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.actualSignUpButton];
 }
 
 
