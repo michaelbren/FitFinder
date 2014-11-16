@@ -50,6 +50,38 @@
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     
+    CGPoint center = self.view.center;
+    
+    self.emailField = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 80, 300, 40)];
+    self.emailField.placeholder = @"Email";
+    self.emailField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.emailField];
+    
+    self.phoneNumberField = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 80, 300, 40)];
+    self.phoneNumberField.placeholder = @"Phone Number";
+    self.phoneNumberField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.phoneNumberField];
+    
+    self.passwordField = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y, 300, 40)];
+    self.passwordField.placeholder = @"Password";
+    self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
+    self.passwordField.secureTextEntry = YES;
+    [self.view addSubview:self.passwordField];
+    
+    self.loginButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.loginButton.frame = CGRectMake(center.x - 100, center.y + 80, 200, 40);
+    [self.loginButton setTitle:@"Login" forState:UIControlStateNormal];
+    [self.loginButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.loginButton];
+    
+    self.signupButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.signupButton.frame = CGRectMake(center.x - 100, center.y + 120, 200, 40);
+    [self.signupButton setTitle:@"or sign up here" forState:UIControlStateNormal];
+    [self.signupButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.signupButton];
+    
+    
+    /*
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
     _collectionView=[[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
     [_collectionView setDataSource:self];
@@ -57,10 +89,46 @@
     
     [_collectionView registerClass:[PhotoCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     [self.view addSubview:_collectionView];
-    _collectionView.backgroundColor = [UIColor whiteColor];
+    _collectionView.backgroundColor = [UIColor whiteColor];*/
     [self loadPictures];
+    
+    
     [super viewDidLoad];
 
+}
+
+-(void)tappedButton:(id)sender {
+    
+    if ((UIButton *)sender == self.signupButton) {
+        UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
+        _collectionView=[[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
+        [_collectionView setDataSource:self];
+        [_collectionView setDelegate:self];
+        
+        [_collectionView registerClass:[PhotoCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+        [self.view addSubview:_collectionView];
+        _collectionView.backgroundColor = [UIColor whiteColor];
+    }
+    else if ((UIButton *)sender == self.loginButton) {
+    // login
+    [PFUser logInWithUsernameInBackground:self.emailField.text password:self.passwordField.text
+                                    block:^(PFUser *user, NSError *error) {
+                                        if (user) {
+                                            // Do stuff after successful login.
+                                            [self dismissViewControllerAnimated:NO completion:nil];
+                                            
+                                        } else {
+                                            // The login failed. Check error to see why.
+                                            self.emailField.text = @"";
+                                            self.phoneNumberField.text = @"";
+                                            self.passwordField.text = @"";
+                                            self.emailField.placeholder = @"Email. Please try again!";
+                                            self.phoneNumberField.placeholder = @"Phone Number. Please try again!";
+                                            self.passwordField.placeholder = @"Password. Please try again!";
+                                        }
+                                    }];
+    
+    }
 }
 
 
@@ -77,6 +145,35 @@
     return [self.photoFileNameArray count];
     //return 3;
 }
+
+
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"Section: %ld, Row: %ld", (long)indexPath.section, (long)indexPath.row);
+    [self workoutStyle:indexPath.row];
+    
+}
+- (void) workoutStyle:(NSInteger)selection
+{
+    NSLog(@"%ld", selection);
+    
+    if(selection == 0){
+        NSLog(@"0");
+        self.workoutType = Biking;
+    }
+    else if(selection == 1){
+        NSLog(@"1");
+        self.workoutType = Running;
+    }
+    else{
+        NSLog(@"2");
+        self.workoutType = Weightlifting;
+    }
+
+    
+}
+
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -104,9 +201,8 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(self.view.frame.size.width - 100, 250);
+    return CGSizeMake(self.view.frame.size.width - 150, 250);
 }
-
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

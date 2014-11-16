@@ -80,12 +80,12 @@
 }
 
 -(NSString *)workoutPreference {
-    NSArray *workoutPreferences = @[@"Weightlifting", @"Running"];
+    NSArray *workoutPreferences = @[@"Weightlifting", @"Running", @"Biking"];
     return [workoutPreferences objectAtIndex:self.workoutType];
 }
 
 -(void)setWorkoutType:(Workout)workoutType {
-    NSArray *workoutPreferences = @[@"Weightlifting", @"Running"];
+    NSArray *workoutPreferences = @[@"Weightlifting", @"Running", @"Biking"];
     self.workoutPreference = [workoutPreferences objectAtIndex:_workoutType];
 }
 
