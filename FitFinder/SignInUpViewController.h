@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 
-@interface SignInUpViewController : UIViewController <UITextFieldDelegate>
+@interface SignInUpViewController : UIViewController <UITextFieldDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+{
+    UICollectionView *_collectionView;
+}
 -(instancetype)init;
 @end

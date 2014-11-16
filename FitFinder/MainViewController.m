@@ -43,10 +43,12 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     PFUser *currentUser = [PFUser currentUser];
-    if (!currentUser) {
+    if (!currentUser)
+    {
         self.signInUpViewController = [[SignInUpViewController alloc] init];
         [self presentViewController:self.signInUpViewController animated:NO completion:nil];
-    } else {
+    } else
+    {
         self.user = [[User alloc] initWithUser:currentUser];
         
         // do stuff with the user
