@@ -54,6 +54,13 @@
     
     CGPoint center = self.view.center;
     
+    
+    UIImageView *dot =[[UIImageView alloc] initWithFrame:CGRectMake(center.x-75,center.y - 250,150,150)];
+    dot.image=[UIImage imageNamed:@"fitfinder.png"];
+    [self.view addSubview:dot];
+    
+    
+    
     self.fullName = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 160, 300, 40)];
     self.fullName.placeholder = @"Full Name";
     self.fullName.borderStyle = UITextBorderStyleRoundedRect;

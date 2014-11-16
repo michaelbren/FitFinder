@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D157544F1A18533600A0F9FB /* Pictures in Resources */ = {isa = PBXBuildFile; fileRef = D157544E1A18533600A0F9FB /* Pictures */; };
 		D15754551A1860DA00A0F9FB /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D15754541A1860DA00A0F9FB /* PhotoCell.m */; };
+		D15754571A18819A00A0F9FB /* fitfinder.png in Resources */ = {isa = PBXBuildFile; fileRef = D15754561A18819A00A0F9FB /* fitfinder.png */; };
 		E107BA3819F68705003C773D /* SignInUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E107BA3719F68705003C773D /* SignInUpViewController.m */; };
 		E107BA3A19F69270003C773D /* icon_44534.png in Resources */ = {isa = PBXBuildFile; fileRef = E107BA3919F69270003C773D /* icon_44534.png */; };
 		E107BA3C19F6927A003C773D /* icon_14880.png in Resources */ = {isa = PBXBuildFile; fileRef = E107BA3B19F6927A003C773D /* icon_14880.png */; };
@@ -51,6 +52,7 @@
 		D157544E1A18533600A0F9FB /* Pictures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pictures; sourceTree = "<group>"; };
 		D15754531A1860DA00A0F9FB /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
 		D15754541A1860DA00A0F9FB /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		D15754561A18819A00A0F9FB /* fitfinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitfinder.png; sourceTree = "<group>"; };
 		E107BA3619F68705003C773D /* SignInUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInUpViewController.h; sourceTree = "<group>"; };
 		E107BA3719F68705003C773D /* SignInUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInUpViewController.m; sourceTree = "<group>"; };
 		E107BA3919F69270003C773D /* icon_44534.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_44534.png; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		E1A348A219EF55510018E48F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D15754561A18819A00A0F9FB /* fitfinder.png */,
 				D157544E1A18533600A0F9FB /* Pictures */,
 				E107BA3D19F6A884003C773D /* icon_419.png */,
 				E107BA3B19F6927A003C773D /* icon_14880.png */,
@@ -311,6 +314,7 @@
 				D157544F1A18533600A0F9FB /* Pictures in Resources */,
 				E1A348AE19EF55510018E48F /* Main.storyboard in Resources */,
 				E107BA3E19F6A884003C773D /* icon_419.png in Resources */,
+				D15754571A18819A00A0F9FB /* fitfinder.png in Resources */,
 				E107BA3A19F69270003C773D /* icon_44534.png in Resources */,
 				E1A348B319EF55510018E48F /* LaunchScreen.xib in Resources */,
 				E107BA3C19F6927A003C773D /* icon_14880.png in Resources */,
