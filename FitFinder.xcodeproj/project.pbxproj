@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D157544F1A18533600A0F9FB /* Pictures in Resources */ = {isa = PBXBuildFile; fileRef = D157544E1A18533600A0F9FB /* Pictures */; };
+		D15754551A1860DA00A0F9FB /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D15754541A1860DA00A0F9FB /* PhotoCell.m */; };
 		E107BA3819F68705003C773D /* SignInUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E107BA3719F68705003C773D /* SignInUpViewController.m */; };
 		E107BA3A19F69270003C773D /* icon_44534.png in Resources */ = {isa = PBXBuildFile; fileRef = E107BA3919F69270003C773D /* icon_44534.png */; };
 		E107BA3C19F6927A003C773D /* icon_14880.png in Resources */ = {isa = PBXBuildFile; fileRef = E107BA3B19F6927A003C773D /* icon_14880.png */; };
@@ -48,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		D157544E1A18533600A0F9FB /* Pictures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pictures; sourceTree = "<group>"; };
+		D15754531A1860DA00A0F9FB /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		D15754541A1860DA00A0F9FB /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
 		E107BA3619F68705003C773D /* SignInUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInUpViewController.h; sourceTree = "<group>"; };
 		E107BA3719F68705003C773D /* SignInUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInUpViewController.m; sourceTree = "<group>"; };
 		E107BA3919F69270003C773D /* icon_44534.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_44534.png; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				E107BA4319F763F3003C773D /* MatchViewController.m */,
 				E107BA3619F68705003C773D /* SignInUpViewController.h */,
 				E107BA3719F68705003C773D /* SignInUpViewController.m */,
+				D15754531A1860DA00A0F9FB /* PhotoCell.h */,
+				D15754541A1860DA00A0F9FB /* PhotoCell.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				E1A348AB19EF55510018E48F /* MainViewController.m in Sources */,
 				E1A348A819EF55510018E48F /* AppDelegate.m in Sources */,
 				E107BA4419F763F3003C773D /* MatchViewController.m in Sources */,
+				D15754551A1860DA00A0F9FB /* PhotoCell.m in Sources */,
 				E107BA3819F68705003C773D /* SignInUpViewController.m in Sources */,
 				E1A348E319EF60CD0018E48F /* User.m in Sources */,
 				E1A348A519EF55510018E48F /* main.m in Sources */,

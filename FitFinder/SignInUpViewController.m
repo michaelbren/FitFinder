@@ -54,10 +54,11 @@
     [_collectionView setDataSource:self];
     [_collectionView setDelegate:self];
     
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    [_collectionView registerClass:[PhotoCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     [self.view addSubview:_collectionView];
     
     [self loadPictures];
+    
     [super viewDidLoad];
 
 }
@@ -85,24 +86,29 @@
     NSString *filename = [NSString stringWithFormat:@"%@/%@", self.sourcePath, imageName];
     
     
-    UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    PhotoCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     
-    cell.backgroundColor=[UIColor whiteColor];
+    //cell.backgroundColor=[UIColor whiteColor];
     
     // Put our images into image views.
     UIImage* image = [UIImage imageWithContentsOfFile:filename];
-    UIImageView* photoImageView = [[UIImageView alloc] initWithImage:image];
+    //UIImageView* photoImageView = [[UIImageView alloc] initWithImage:image];
     
+    NSLog(@"1");
+    cell.imageView.image = image;
+    
+    NSLog(@"2");
     // Add picture to cell as subview
-    [cell addSubview:photoImageView];
-    
+    //[cell addSubview:photoImageView];
     return cell;
 }
+
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(self.view.frame.size.width, 250);
 }
+
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
