@@ -24,8 +24,6 @@ typedef enum WorkoutType : NSInteger{
 @property NSString *gym;
 @property UIImage *avatar;
 
-@property PFObject *matchData;
-
 @property Workout workoutType;
 @property NSString *workoutPreference;
 

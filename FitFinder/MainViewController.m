@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property UIViewController *signInUpViewController;
 @property User *user;
+
 @property UIButton *profileImage;
 
 @property UILabel *fullName;
@@ -35,8 +36,6 @@
     
     if (currentUser) {
         NSLog(@"There's a current user!");
-        
-        self.user = [[User alloc] initWithUser:currentUser];
     }
     
 }
@@ -53,7 +52,7 @@
         CGPoint center = self.mainView.center;
         
         self.profileImage = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.profileImage.frame = CGRectMake(0, 0, self.mainView.frame.size.width, self.mainView.frame.size.height/2);
+        self.profileImage.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainView.frame), CGRectGetHeight(self.mainView.frame)/2);
         if (self.user.avatar) {
             [self.profileImage setImage:self.user.avatar forState:UIControlStateNormal];
         } else {
@@ -101,10 +100,11 @@
 }
 
 - (void)logOutButton {
-    self.fullName = nil;
-    self.phoneNumber = nil;
-    self.email = nil;
-    self.workout = nil;
+    [self.profileImage removeFromSuperview];
+    [self.fullName removeFromSuperview];
+    [self.phoneNumber removeFromSuperview];
+    [self.email removeFromSuperview];
+    [self.workout removeFromSuperview];
     
     [PFUser logOut];
     
@@ -122,7 +122,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info {
     self.user.avatar = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [self.profileImage setImage:self.user.avatar forState:UIControlStateNormal];
+    [self.profileImage setImage:[info objectForKey:UIImagePickerControllerOriginalImage] forState:UIControlStateNormal];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
