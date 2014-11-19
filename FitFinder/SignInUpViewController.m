@@ -364,8 +364,8 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy"];
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-    [timeFormatter setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
-    [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [timeFormatter setDateFormat:@"HH:mm"];
+    [timeFormatter setTimeZone:[NSTimeZone localTimeZone]];
     NSString *newTime = [timeFormatter stringFromDate:sender.date] ;
     
     
@@ -379,8 +379,8 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy"];
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-    [timeFormatter setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
-    [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [timeFormatter setDateFormat:@"HH:mm"];
+    [timeFormatter setTimeZone:[NSTimeZone localTimeZone]];
     NSString *newTime = [timeFormatter stringFromDate:sender.date] ;
     
     
@@ -472,8 +472,8 @@
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"yyyy"];
         NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-        [timeFormatter setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
-        [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+        [timeFormatter setDateFormat:@"HH:mm"];
+        [timeFormatter setTimeZone:[NSTimeZone localTimeZone]];
         NSString *newTime = [timeFormatter stringFromDate:datePicker.date] ;
         
         
