@@ -14,4 +14,5 @@
     UICollectionView *_collectionView;
 }
 -(instancetype)init;
+
 @end

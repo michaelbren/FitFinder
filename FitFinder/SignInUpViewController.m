@@ -27,6 +27,11 @@
 @property UIImageView *dot;
 
 
+@property UIDatePicker *datePicker;
+
+@property UIButton *startTime;
+@property UIButton *endTime;
+
 
 //picture stuff
 @property (strong, nonatomic) NSArray* photoFileNameArray;
@@ -63,7 +68,7 @@
     
     
     
-    self.fullName = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 160, 300, 40)];
+    self.fullName = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 240, 300, 40)];
     self.fullName.placeholder = @"Full Name";
     self.fullName.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:self.fullName];
@@ -222,6 +227,20 @@
     self.fullName.hidden = NO;
     self.dot.hidden = YES;
     
+    
+    
+    
+    //Time picker
+    
+    
+    /*self.datePicker = [[UIDatePicker alloc] init];
+    self.datePicker.frame = CGRectMake(0, 0, self.view.frame.size.width, 180.0f); // set frame as your need
+    self.datePicker.datePickerMode = UIDatePickerModeTime;
+    [self.view addSubview: self.datePicker];*/
+    
+
+    
+    
     /*
     self.fullName = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y - 160, 300, 40)];
     self.fullName.placeholder = @"Full Name";
@@ -229,17 +248,17 @@
     [self.view addSubview:self.fullName];*/
     
     self.emailField.placeholder = @"Email";
-    self.emailField.frame = CGRectMake(center.x - 150, center.y - 80, 300, 40);
+    self.emailField.frame = CGRectMake(center.x - 150, center.y - 160, 300, 40);
     self.emailField.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:self.emailField];
     
     self.phoneNumberField.placeholder = @"Phone Number";
-    self.phoneNumberField.frame = CGRectMake(center.x - 150, center.y, 300, 40);
+    self.phoneNumberField.frame = CGRectMake(center.x - 150, center.y - 80, 300, 40);
     self.phoneNumberField.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:self.phoneNumberField];
     
     self.passwordField.placeholder = @"Password";
-    self.passwordField.frame = CGRectMake(center.x - 150, center.y + 80, 300, 40);
+    self.passwordField.frame = CGRectMake(center.x - 150, center.y, 300, 40);
     self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
     self.passwordField.secureTextEntry = YES;
     [self.view addSubview:self.passwordField];
@@ -249,6 +268,23 @@
     [self.actualSignUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
     [self.actualSignUpButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.actualSignUpButton];
+    
+    
+    
+    self.startTime = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.startTime.frame = CGRectMake(center.x - 150, center.y + 80, 150, 40);
+    self.startTime.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [self.startTime setTitle:@"Preferred Start Time" forState:UIControlStateNormal];
+    [self.startTime addTarget:self action:@selector(callDP:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.startTime];
+
+
+    self.endTime = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.endTime.frame = CGRectMake(center.x, center.y + 80, 150 ,40);
+    self.endTime.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [self.endTime setTitle:@"Preferred End Time" forState:UIControlStateNormal];
+    [self.endTime addTarget:self action:@selector(callDP:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.endTime];
 }
 
 
@@ -287,8 +323,78 @@
     if(textField)
     {
         [textField resignFirstResponder];
+        
+
     }
     return YES;
+}
+
+
+- (void)changeDate:(UIDatePicker *)sender {
+    NSLog(@"New Date: %@", sender.date);
+}
+
+- (void)removeViews:(id)object {
+    [[self.view viewWithTag:9] removeFromSuperview];
+    [[self.view viewWithTag:10] removeFromSuperview];
+    [[self.view viewWithTag:11] removeFromSuperview];
+}
+
+- (void)dismissDatePicker:(id)sender {
+    CGRect toolbarTargetFrame = CGRectMake(0, self.view.bounds.size.height, 320, 44);
+    CGRect datePickerTargetFrame = CGRectMake(0, self.view.bounds.size.height+44, 320, 216);
+    [UIView beginAnimations:@"MoveOut" context:nil];
+    [self.view viewWithTag:9].alpha = 0;
+    [self.view viewWithTag:10].frame = datePickerTargetFrame;
+    [self.view viewWithTag:11].frame = toolbarTargetFrame;
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(removeViews:)];
+    [UIView commitAnimations];
+}
+
+- (IBAction)callDP:(id)sender {
+    if ([self.view viewWithTag:9]) {
+        return;
+    }
+    CGRect toolbarTargetFrame = CGRectMake(0, self.view.bounds.size.height-216-44, 320, 44);
+    CGRect datePickerTargetFrame = CGRectMake(0, self.view.bounds.size.height-216, 320, 216);
+    
+    UIView *darkView = [[UIView alloc] initWithFrame:self.view.bounds];
+    //darkView.alpha = 0;
+    //darkView.backgroundColor = [UIColor whiteColor];
+    darkView.tag = 9;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissDatePicker:)] ;
+    [darkView addGestureRecognizer:tapGesture];
+    [self.view addSubview:darkView];
+    
+    
+    
+    
+    
+    
+    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height+44, 320, 216)];
+    datePicker.datePickerMode = UIDatePickerModeTime;
+    datePicker.tag = 10;
+    
+    [datePicker addTarget:self action:@selector(changeDate:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:datePicker];
+    datePicker.backgroundColor = [UIColor grayColor];
+    
+    
+    
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height, 320, 44)];
+    toolBar.tag = 11;
+    toolBar.barStyle = UIBarStyleBlackTranslucent;
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissDatePicker:)];
+    [toolBar setItems:[NSArray arrayWithObjects:spacer, doneButton, nil]];
+    [self.view addSubview:toolBar];
+    
+    [UIView beginAnimations:@"MoveIn" context:nil];
+    toolBar.frame = toolbarTargetFrame;
+    datePicker.frame = datePickerTargetFrame;
+    darkView.alpha = 0.5;
+    [UIView commitAnimations];
 }
 
 @end
