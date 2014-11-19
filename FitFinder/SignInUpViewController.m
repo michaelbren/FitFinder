@@ -88,7 +88,7 @@
     self.endTime = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y + 160, 300, 40)];
     self.endTime.placeholder = @"Preferred End Time";
     self.endTime.borderStyle = UITextBorderStyleRoundedRect;
-    self.endTime.tag = 4;
+    self.endTime.tag = 5;
     [self.view addSubview:self.endTime];
     self.endTime.hidden = YES;
     
@@ -361,6 +361,32 @@
 
 - (void)changeDate:(UIDatePicker *)sender {
     NSLog(@"New Date: %@", sender.date);
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy"];
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    [timeFormatter setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
+    [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    NSString *newTime = [timeFormatter stringFromDate:sender.date] ;
+    
+    
+    self.startTime.text = newTime;
+    
+}
+
+- (void)changeDate1:(UIDatePicker *)sender {
+    NSLog(@"New Date: %@", sender.date);
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy"];
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    [timeFormatter setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
+    [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    NSString *newTime = [timeFormatter stringFromDate:sender.date] ;
+    
+    
+    self.endTime.text = newTime;
+    
+    
 }
 
 - (void)removeViews:(id)object {
@@ -385,7 +411,7 @@
     NSLog(@"%ld", textField.tag);
     
     //[textField resignFirstResponder];
-    if(textField.tag == 4)
+    if(textField.tag == 4 || textField.tag == 5)
     {
         NSLog(@"Hello world");
         [textField resignFirstResponder];
@@ -413,7 +439,15 @@
         datePicker.datePickerMode = UIDatePickerModeTime;
         datePicker.tag = 10;
         
-        [datePicker addTarget:self action:@selector(changeDate:) forControlEvents:UIControlEventValueChanged];
+        if(textField.tag == 4)
+        {
+            [datePicker addTarget:self action:@selector(changeDate:) forControlEvents:UIControlEventValueChanged];
+        }
+        else if(textField.tag == 5)
+        {
+            [datePicker addTarget:self action:@selector(changeDate1:) forControlEvents:UIControlEventValueChanged];
+        }
+
         [self.view addSubview:datePicker];
         datePicker.backgroundColor = [UIColor grayColor];
         
@@ -433,6 +467,17 @@
         darkView.alpha = 0.5;
         [UIView commitAnimations];
 
+        
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy"];
+        NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+        [timeFormatter setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
+        [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+        NSString *newTime = [timeFormatter stringFromDate:datePicker.date] ;
+        
+        
+        [textField setText:newTime];
     }
  }
 
