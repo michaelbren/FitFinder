@@ -28,14 +28,19 @@
 
 
 @property UIDatePicker *datePicker;
+@property UIPickerView *nPicker;
 
 @property UITextField *startTime;
 @property UITextField *endTime;
+@property UITextField *gym;
+
+@property UIButton *nearbyButton;
 
 
 //picture stuff
 @property (strong, nonatomic) NSArray* photoFileNameArray;
 @property (strong, nonatomic) NSString* sourcePath;
+@property (strong, nonatomic) NSMutableArray* nearbyArray;
 
 
 @end
@@ -52,6 +57,7 @@
         self.fullName.delegate = self;
         self.startTime.delegate = self;
         self.endTime.delegate = self;
+        self.gym.delegate = self;
     }
     return self;
 }
@@ -59,6 +65,8 @@
 - (void)viewDidLoad {
     
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.nearbyArray = [[NSMutableArray alloc] init];
     
     
     CGPoint center = self.view.center;
@@ -78,21 +86,29 @@
     
     
     
-    self.startTime = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y + 80, 300, 40)];
-    self.startTime.placeholder = @"Preferred Start Time";
+    self.startTime = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y + 80, 145, 40)];
+    self.startTime.placeholder = @"Preferred Start";
     self.startTime.borderStyle = UITextBorderStyleRoundedRect;
     self.startTime.tag = 4;
     [self.view addSubview:self.startTime];
     self.startTime.hidden = YES;
     
-    self.endTime = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y + 160, 300, 40)];
-    self.endTime.placeholder = @"Preferred End Time";
+    self.endTime = [[UITextField alloc] initWithFrame: CGRectMake(center.x, center.y + 80, 150, 40)];
+    self.endTime.placeholder = @"Preferred End";
     self.endTime.borderStyle = UITextBorderStyleRoundedRect;
     self.endTime.tag = 5;
     [self.view addSubview:self.endTime];
     self.endTime.hidden = YES;
     
+    self.gym = [[UITextField alloc] initWithFrame: CGRectMake(center.x - 150, center.y + 160, 200, 40)];
+    self.gym.placeholder = @"Preferred Gym";
+    self.gym.borderStyle = UITextBorderStyleRoundedRect;
+    self.gym.tag = 5;
+    [self.view addSubview:self.gym];
+    self.gym.hidden = YES;
     
+    
+
     
     
     
@@ -153,6 +169,21 @@
         [_collectionView registerClass:[PhotoCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
         [self.view addSubview:_collectionView];
         _collectionView.backgroundColor = [UIColor whiteColor];
+        
+        
+        //queries for nearby gyms
+        MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(30.284926,-97.735441);
+        request.naturalLanguageQuery = @"gym";
+        request.region = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
+        MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+        [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error){
+            for (MKMapItem *item in response.mapItems) {
+                NSLog(@"%@", item.name);
+                [self.nearbyArray addObject:item.name];
+                NSLog(@"Hello, %@", self.nearbyArray[0]);
+            }
+        }];
     }
     else if ((UIButton *)sender == self.loginButton) {
     // login
@@ -173,6 +204,49 @@
                                         }
                                     }];
     
+    }
+    else if((UIButton *)sender == self.nearbyButton)
+    {
+        NSLog(@"nearbyButton is pressed");
+        CGRect toolbarTargetFrame = CGRectMake(0, self.view.bounds.size.height-216-44, 320, 44);
+        CGRect datePickerTargetFrame = CGRectMake(0, self.view.bounds.size.height-216, 320, 216);
+        
+        UIView *darkView = [[UIView alloc] initWithFrame:self.view.bounds];
+        //darkView.alpha = 0;
+        //darkView.backgroundColor = [UIColor whiteColor];
+        darkView.tag = 9;
+        
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissDatePicker:)] ;
+        [darkView addGestureRecognizer:tapGesture];
+        [self.view addSubview:darkView];
+        
+        
+        UIPickerView *nPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height+44, 320, 216)];
+        nPicker.tag = 10;
+        [self.view addSubview:nPicker];
+        nPicker.delegate = self;
+        nPicker.showsSelectionIndicator = YES;
+        nPicker.backgroundColor = [UIColor grayColor];
+        
+        
+        
+        UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height, 320, 44)];
+        toolBar.tag = 11;
+        toolBar.barStyle = UIBarStyleBlackTranslucent;
+        UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissDatePicker:)];
+        [toolBar setItems:[NSArray arrayWithObjects:spacer, doneButton, nil]];
+        [self.view addSubview:toolBar];
+        
+        [UIView beginAnimations:@"MoveIn" context:nil];
+        toolBar.frame = toolbarTargetFrame;
+        nPicker.frame = datePickerTargetFrame;
+        darkView.alpha = 0.5;
+        [UIView commitAnimations];
+        
+        
+        self.gym.text = self.nearbyArray[0];
+
     }
     else {
         User *newUser = [[User alloc] initWithEmail:self.emailField.text andWithPassWord:self.passwordField.text];
@@ -250,7 +324,9 @@
     self.fullName.hidden = NO;
     self.startTime.hidden = NO;
     self.endTime.hidden = NO;
+    self.gym.hidden = NO;
     self.dot.hidden = YES;
+    self.nearbyButton = NO;
     
     
     
@@ -297,6 +373,13 @@
     [self.actualSignUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
     [self.actualSignUpButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.actualSignUpButton];
+    
+    
+    self.nearbyButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.nearbyButton.frame = CGRectMake(center.x, center.y + 160, 200, 40);
+    [self.nearbyButton setTitle:@"Nearby" forState:UIControlStateNormal];
+    [self.nearbyButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.nearbyButton];
     
     
         /*
@@ -480,5 +563,41 @@
         [textField setText:newTime];
     }
  }
+
+
+
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component {
+    // Handle the selection
+    NSLog(@"handle the selection");
+    self.gym.text = self.nearbyArray[row];
+}
+
+// tell the picker how many rows are available for a given component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    //NSUInteger numRows = 5;
+    
+    return self.nearbyArray.count;
+}
+
+// tell the picker how many components it will have
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+// tell the picker the title for a given component
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *title;
+    title = self.nearbyArray[row];
+    
+    return title;
+}
+
+// tell the picker the width of each row for a given component
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    int sectionWidth = 300;
+    
+    return sectionWidth;
+}
 
 @end

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "User.h"
 
-@interface SignInUpViewController : UIViewController <UITextFieldDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface SignInUpViewController : UIViewController <UITextFieldDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UIPickerViewDelegate>
 {
     UICollectionView *_collectionView;
 }
