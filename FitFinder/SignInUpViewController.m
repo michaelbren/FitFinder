@@ -40,8 +40,11 @@
 //picture stuff
 @property (strong, nonatomic) NSArray* photoFileNameArray;
 @property (strong, nonatomic) NSString* sourcePath;
-@property (strong, nonatomic) NSMutableArray* nearbyArray;
 
+
+
+@property (strong, nonatomic) NSMutableArray* nearbyArray;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -63,6 +66,15 @@
 }
 
 - (void)viewDidLoad {
+
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    [self.locationManager startUpdatingLocation];
+    
+  
+    
     
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -158,6 +170,10 @@
 
 }
 
+- (NSString *)deviceLocation {
+    return [NSString stringWithFormat:@"latitude: %f longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
+}
+
 -(void)tappedButton:(id)sender {
     
     if ((UIButton *)sender == self.signupButton) {
@@ -173,7 +189,9 @@
         
         //queries for nearby gyms
         MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
-        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(30.284926,-97.735441);
+        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+        
+        //CLLocationCoordinate2D location = CLLocationCoordinate2DMake(30.284926,-97.735441);
         request.naturalLanguageQuery = @"gym";
         request.region = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
         MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
@@ -207,6 +225,10 @@
     }
     else if((UIButton *)sender == self.nearbyButton)
     {
+        
+          NSLog(@"%@", [self deviceLocation]);
+        
+        
         NSLog(@"nearbyButton is pressed");
         CGRect toolbarTargetFrame = CGRectMake(0, self.view.bounds.size.height-216-44, 320, 44);
         CGRect datePickerTargetFrame = CGRectMake(0, self.view.bounds.size.height-216, 320, 216);
