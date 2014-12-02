@@ -14,7 +14,6 @@
 @synthesize fullName = _fullName;
 @synthesize phoneNumber = _phoneNumber;
 @synthesize gym = _gym;
-@synthesize matchData = _matchData;
 @synthesize workoutPreference = _workoutPreference;
 @synthesize workoutType = _workoutType;
 @synthesize avatar = _avatar;
@@ -31,7 +30,7 @@
             self.avatar = [UIImage imageWithData:image];
             NSLog(@"Image");
         } else {
-            NSLog(@"well fuck dude");
+            NSLog(@"No Image");
         }
     }
     return self;
@@ -54,7 +53,7 @@
 
 -(void)setFullName:(NSString *)fullName{
     _fullName = fullName;
-    NSLog(@"%@", fullName);
+    NSLog(@"setFullName %@\n", fullName);
     self.parseUser[@"fullName"] = fullName;
 }
 
@@ -64,7 +63,7 @@
 
 -(void)setGym:(NSString *)gym{
     _gym = gym;
-    NSLog(@"%@", gym);
+    NSLog(@"setGym %@\n", gym);
     self.parseUser[@"gym"] = gym;
 }
 
@@ -75,16 +74,17 @@
 // Getters/Setters for workout preference
 -(void)setWorkoutPreference:(NSString *)workoutPreference {
     _workoutPreference = workoutPreference;
-    NSLog(@"%@", workoutPreference);
+    NSLog(@"setWorkoutPreference %@\n", workoutPreference);
     self.parseUser[@"workoutPreference"] = self.workoutPreference;
 }
 
 -(NSString *)workoutPreference {
-    NSArray *workoutPreferences = @[@"Weightlifting", @"Running"];
-    return [workoutPreferences objectAtIndex:self.workoutType];
+    return _workoutPreference;
 }
 
 -(void)setWorkoutType:(Workout)workoutType {
+    _workoutType = workoutType;
+    NSLog(@"setWorkoutType %d", workoutType);
     NSArray *workoutPreferences = @[@"Weightlifting", @"Running"];
     self.workoutPreference = [workoutPreferences objectAtIndex:_workoutType];
 }
@@ -95,7 +95,7 @@
 
 -(void)setPhoneNumber:(NSString *)phoneNumber {
     _phoneNumber = phoneNumber;
-    NSLog(@"%@", phoneNumber);
+    NSLog(@"setPhoneNumber %@\n", phoneNumber);
     self.parseUser[@"phoneNumber"] = phoneNumber;
 }
 
@@ -103,30 +103,17 @@
     return _phoneNumber;
 }
 
--(void)setMatchData:(PFObject *)matchData {
-    _matchData = matchData;
-    NSLog(@"%@", matchData);
-    self.parseUser[@"matchData"] = matchData;
-    [self.parseUser save];
-}
-
--(PFObject *)matchData {
-    return _matchData;
-}
-
 -(void)setAvatar:(UIImage *)avatar {
     _avatar = avatar;
     NSData *imageData = UIImageJPEGRepresentation(avatar, 0.4);
     PFFile *file = [PFFile fileWithName:@"avatar.jpg" data:imageData];
-    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        self.parseUser[@"avatar"] = file;
-        [self.parseUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                NSLog(@"SUCCESS saving shit");
-            } else {
-                NSLog(@"Failure to save shit");
-            }
-        }];
+    self.parseUser[@"avatar"] = file;
+    [self.parseUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"SUCCESS saving avatar");
+        } else {
+            NSLog(@"Failure to save avatar");
+        }
     }];
 }
 
