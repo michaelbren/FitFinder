@@ -34,6 +34,8 @@
 @property UITextField *gym;
 
 @property UIButton *nearbyButton;
+@property UIButton *selectBackButton;
+@property UIButton *cviewBackButton;
 //picture stuff
 @property (strong, nonatomic) NSArray* photoFileNameArray;
 @property (strong, nonatomic) NSString* sourcePath;
@@ -145,8 +147,7 @@
         
         //[self signUp];
         
-        
-        //Decided to query for nearby gyms when user presses signup just in case it takes a while...
+        //Load up the collection View
         UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
         _collectionView=[[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
         [_collectionView setDataSource:self];
@@ -155,8 +156,15 @@
         [_collectionView registerClass:[PhotoCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
         [self.view addSubview:_collectionView];
         _collectionView.backgroundColor = [UIColor whiteColor];
+        self.cviewBackButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        self.cviewBackButton.frame = CGRectMake(0, 5, 60, 40);
+        [self.cviewBackButton setTitle:@"Back" forState:UIControlStateNormal];
+        [self.cviewBackButton addTarget:self action:@selector(cViewBackButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.cviewBackButton];
         
         
+        
+        //Decided to query for nearby gyms when user presses signup just in case it takes a while...
         //queries for nearby gyms
         MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
         CLLocationCoordinate2D location = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
@@ -256,6 +264,39 @@
     
     self.gym.text = self.nearbyArray[0];
 }
+
+
+-(void)selectionBackButtonTapped:(id)sender {
+    NSLog(@"back");
+    
+    _collectionView.hidden = NO;
+    self.fullName.hidden = YES;
+    self.phoneNumberField.hidden = YES;
+    self.startTime.hidden = YES;
+    self.endTime.hidden = YES;
+    self.nearbyButton.hidden = YES;
+    self.gym.hidden = YES;
+    self.actualSignUpButton.hidden = YES;
+    self.selectBackButton.hidden = YES;
+}
+
+-(void)cViewBackButtonTapped:(id)sender {
+    NSLog(@"back");
+    _collectionView.hidden = YES;
+    self.loginButton.hidden = NO;
+    self.signupButton.hidden = NO;
+    self.emailField.hidden = NO;
+    self.passwordField.hidden = NO;
+    self.dot.hidden = NO;
+    self.cviewBackButton.hidden = YES;
+    
+    //Reposition the email
+    CGPoint center = self.view.center;
+    self.emailField.frame = CGRectMake(center.x - 150, center.y - 80, 300, 40);
+}
+
+
+
 /*
 -(void)signUp {
     CGPoint center = self.view.center;
@@ -362,18 +403,8 @@
     
     
     _collectionView.hidden = YES;
-    self.loginButton.hidden = YES;
-    self.signupButton.hidden = YES;
-    self.fullName.hidden = NO;
-    self.startTime.hidden = NO;
-    self.endTime.hidden = NO;
-    self.gym.hidden = NO;
-    self.dot.hidden = YES;
-    self.nearbyButton = NO;
-    
     
     self.emailField.hidden = NO;
-    self.phoneNumberField.hidden = NO;
     self.passwordField.hidden = NO;
     /*
     
@@ -445,23 +476,12 @@
     [self.view addSubview:self.gym];
     self.gym.delegate = self;
     
-    /*
-     self.startTime = [UIButton buttonWithType:UIButtonTypeSystem];
-     self.startTime.frame = CGRectMake(center.x - 150, center.y + 80, 150, 40);
-     self.startTime.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-     [self.startTime setTitle:@"Preferred Start Time" forState:UIControlStateNormal];
-     [self.startTime addTarget:self action:@selector(callDP:) forControlEvents:UIControlEventTouchUpInside];
-     [self.view addSubview:self.startTime];
-     
-     
-     self.endTime = [UIButton buttonWithType:UIButtonTypeSystem];
-     self.endTime.frame = CGRectMake(center.x, center.y + 80, 150 ,40);
-     self.endTime.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-     [self.endTime setTitle:@"Preferred End Time" forState:UIControlStateNormal];
-     [self.endTime addTarget:self action:@selector(callDP:) forControlEvents:UIControlEventTouchUpInside];
-     [self.view addSubview:self.endTime];*/
+    self.selectBackButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.selectBackButton.frame = CGRectMake(0, 5, 60, 40);
+    [self.selectBackButton setTitle:@"Back" forState:UIControlStateNormal];
+    [self.selectBackButton addTarget:self action:@selector(selectionBackButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.selectBackButton];
 }
-
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
