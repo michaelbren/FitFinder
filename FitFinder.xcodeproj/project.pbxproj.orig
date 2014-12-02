@@ -10,7 +10,6 @@
 		D157544F1A18533600A0F9FB /* Pictures in Resources */ = {isa = PBXBuildFile; fileRef = D157544E1A18533600A0F9FB /* Pictures */; };
 		D15754551A1860DA00A0F9FB /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D15754541A1860DA00A0F9FB /* PhotoCell.m */; };
 		D15754571A18819A00A0F9FB /* fitfinder.png in Resources */ = {isa = PBXBuildFile; fileRef = D15754561A18819A00A0F9FB /* fitfinder.png */; };
-		D17D58E01A2D802700D9FAD2 /* Pictures in Resources */ = {isa = PBXBuildFile; fileRef = D17D58DF1A2D802700D9FAD2 /* Pictures */; };
 		E107BA3819F68705003C773D /* SignInUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E107BA3719F68705003C773D /* SignInUpViewController.m */; };
 		E107BA3A19F69270003C773D /* icon_44534.png in Resources */ = {isa = PBXBuildFile; fileRef = E107BA3919F69270003C773D /* icon_44534.png */; };
 		E107BA3C19F6927A003C773D /* icon_14880.png in Resources */ = {isa = PBXBuildFile; fileRef = E107BA3B19F6927A003C773D /* icon_14880.png */; };
@@ -57,7 +56,6 @@
 		D15754531A1860DA00A0F9FB /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
 		D15754541A1860DA00A0F9FB /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
 		D15754561A18819A00A0F9FB /* fitfinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitfinder.png; sourceTree = "<group>"; };
-		D17D58DF1A2D802700D9FAD2 /* Pictures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pictures; sourceTree = "<group>"; };
 		E107BA3619F68705003C773D /* SignInUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInUpViewController.h; sourceTree = "<group>"; };
 		E107BA3719F68705003C773D /* SignInUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInUpViewController.m; sourceTree = "<group>"; };
 		E107BA3919F69270003C773D /* icon_44534.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_44534.png; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 		E1A348A119EF55510018E48F /* FitFinder */ = {
 			isa = PBXGroup;
 			children = (
-				D17D58DF1A2D802700D9FAD2 /* Pictures */,
 				E1A348A619EF55510018E48F /* AppDelegate.h */,
 				E1A348A719EF55510018E48F /* AppDelegate.m */,
 				E1A348E519F224A50018E48F /* Controller */,
@@ -326,11 +323,13 @@
 				D157544F1A18533600A0F9FB /* Pictures in Resources */,
 				E1A348AE19EF55510018E48F /* Main.storyboard in Resources */,
 				E15956BB1A1CCA2100C2D4C4 /* icon_2623.png in Resources */,
-				D17D58E01A2D802700D9FAD2 /* Pictures in Resources */,
 				E15956BD1A1CCE3D00C2D4C4 /* icon_45888.png in Resources */,
 				E107BA3E19F6A884003C773D /* icon_419.png in Resources */,
-				D15754571A18819A00A0F9FB /* fitfinder.png in Resources */,
+<<<<<<< HEAD
 				E15956BF1A1CCE4F00C2D4C4 /* icon_45885.png in Resources */,
+=======
+				D15754571A18819A00A0F9FB /* fitfinder.png in Resources */,
+>>>>>>> ui_testing
 				E107BA3A19F69270003C773D /* icon_44534.png in Resources */,
 				E1A348B319EF55510018E48F /* LaunchScreen.xib in Resources */,
 				E107BA3C19F6927A003C773D /* icon_14880.png in Resources */,

@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 
 typedef enum WorkoutType : NSInteger{
-    Weightlifting, Running
+    Weightlifting, Running, Biking
 } Workout;
 
 @interface User : NSObject
