@@ -98,6 +98,7 @@
     [self.signupButton addTarget:self action:@selector(tappedSignupButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.signupButton];
     
+    //Loads pictures for CollectionView
     [self loadPictures];
     
     // Delegate setting
@@ -106,6 +107,7 @@
     self.fullName.delegate = self;
 }
 
+//Used for location debugging
 - (NSString *)deviceLocation {
     return [NSString stringWithFormat:@"latitude: %f longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
 }
@@ -143,6 +145,8 @@
         
         //[self signUp];
         
+        
+        //Decided to query for nearby gyms when user presses signup just in case it takes a while...
         UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
         _collectionView=[[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
         [_collectionView setDataSource:self];
@@ -207,6 +211,7 @@
     }
 }
 
+//Load the nearby gyms into a pickerview
 -(void)tappedNearbyButton:(id)sender {
     NSLog(@"%@", [self deviceLocation]);
     
@@ -315,6 +320,7 @@
     
 }*/
 
+//CollectionView methods
 - (void) loadPictures
 {
     // Save our path to the photos.
@@ -328,8 +334,6 @@
     return [self.photoFileNameArray count];
     //return 3;
 }
-
-
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -498,7 +502,7 @@
     return YES;
 }
 
-//DatePicker
+//DatePicker methods
 - (void)changeDate:(UIDatePicker *)sender {
     NSLog(@"New Date: %@", sender.date);
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
